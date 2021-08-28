@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="columns">
+        
+        <h1>New Events</h1>
+      
+    </div>
+</div>
+
+<div class="container">
+    <div class="columns">
+        {% for event in events %}
+            <ul class="list-styled">
+                <li class="media">
+                    <image class="img-thumbnail" src="{{event.image}}"></image>
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">
+                                {{event.event_name}}
+                            </h5>
+                            {{event.time}} | {{event.date}} | {{event.location}}
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                               
+                                
+                                <button type="submit"><i><img src="https://img.icons8.com/material-outlined/24/000000/like--v2.png" /></i></button>
+                            </form>
+                        </div>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

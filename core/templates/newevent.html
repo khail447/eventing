@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="columns">
+        
+        <h1>New Event</h1>
+      
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="columns">
+        <form
+        method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success">Add Event</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
